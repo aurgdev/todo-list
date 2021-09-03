@@ -28,7 +28,7 @@
         </li>
       </ul>
     </nav>
-    <header>
+    <div class="header-top">
       <h1>
         TODO LIST,<br />Your to do lists, tasks, and reminders — all in one
         place
@@ -37,20 +37,64 @@
         Create clear, multi-functional to-do lists to easily manage your ideas
         and work from anywhere so you never forget anything again.
       </p>
-    </header>
-    <div class="container">
-      <form action="" id="todo-form">
-        <input id="todo-input" type="text" placeholder="Type your task ..." />
-        <button>Add</button>
-      </form>
     </div>
-    <div class="todo-list" id="todo-list">
-      <div>
-        <input type="checkbox" name="" id="" />
-        <h3></h3>
-        <button>Delete</button>
+    <div class="container">
+      <div class="all-tasks">
+        <h2 class="task-list-title">My lists</h2>
+        <ul class="task-list" data-lists></ul>
+  
+        <form action="" data-new-list-form>
+          <input 
+            type="text"
+            class="new list"
+            data-new-list-input
+            placeholder="new list name"
+            aria-label="new list name"
+          />
+          <button class="btn create" aria-label="create new list">+</button>
+        </form>
+      </div>
+  
+      <div class="todo-list" data-list-display-container>
+        <div class="todo-header">
+          <h2 class="list-title" data-list-title>YouTube</h2>
+          <p class="task-count" data-list-count>3 tasks remaining</p>
+        </div>
+  
+        <div class="todo-body">
+          <div class="tasks" data-tasks></div>
+  
+          <div class="new-task-creator">
+              <form action="" data-new-task-form>
+                  <input 
+                    type="text"
+                    data-new-task-input
+                    class="new task"
+                    placeholder="new task name"
+                    aria-label="new task name"
+                  />
+                  <button class="btn create" aria-label="create new task">+</button>
+                </form>
+          </div>
+  
+          <div class="delete-stuff">
+            <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+            <button class="btn delete" data-delete-list-button>Delete list</button>
+          </div>
+        </div>
+      </div>
+  
+     
       </div>
     </div>
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
     <script defer src="javascript/app.js"></script>
   </body>
 </html>
